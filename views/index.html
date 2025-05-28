@@ -88,60 +88,6 @@ import * as ReactDOM from "react-dom/client";
         const locales = [{code: "id-ID", id: "default", name: "Indonesian", slug: ""}]
         const collectionUtils = {}
         const framerSiteId = "d8fd36ce25aa579b5afc0d4fa59933bcae2f5f0cfff7c3b5594f50ae2801a068"
-        
-
-        export async function getPageRoot({ routeId, pathVariables, localeId }) {
-            const rootPreload = routes[routeId].page.preload()
-
-            const content = React.createElement(
-                Framer.PageRoot,
-                {
-                    isWebsite: true,
-                    routeId,
-                    pathVariables,
-                    routes,
-                    collectionUtils,
-                    framerSiteId,
-                    notFoundPage: Framer.lazy(() => import("__framer-not-found-page")),
-                    isReducedMotion: undefined,
-                    localeId,
-                    locales,
-                    preserveQueryParams: undefined,
-                    siteCanonicalURL: "https://violet-try-561779.framer.app",
-                    EditorBar: 
-typeof window === "undefined" ? undefined : (() => {
-    const isBot = /bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)
-    if (isBot) return
-
-    return Framer.lazy(async () => {
-        const { createEditorBar } = await import("https://edit.framer.com/init.mjs")
-        return {
-            default: createEditorBar({
-                dependencies: {
-                    __version: 1,
-                    framer: {
-                        useCurrentRoute: Framer.useCurrentRoute,
-                        useLocaleInfo: Framer.useLocaleInfo,
-                        useRouter: Framer.useRouter,
-                    },
-                    react: {
-                        createElement: React.createElement,
-                        memo: React.memo,
-                        useCallback: React.useCallback,
-                        useEffect: React.useEffect,
-                        useRef: React.useRef,
-                        useState: React.useState,
-                    },
-                    "react-dom": { createPortal },
-                },
-            }),
-        }
-    })
-})()
-,
-                    
-                }
-            )
 
             const contentWithFeaturesContext = React.createElement(
                 Framer.LibraryFeaturesProvider,
