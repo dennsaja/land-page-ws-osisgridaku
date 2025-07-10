@@ -10,6 +10,9 @@ app.use(express.json());
 // Routes
 
 app.use("/", index);
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'views', 'notfound.html'));
+});
 
 // connection
 const port = process.env.PORT || 9001;
