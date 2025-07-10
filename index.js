@@ -8,10 +8,8 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.get("/", (req, res) => {
-  res.redirect("/osis/2025");
-});
-app.use("/osis/2025", index);
+
+app.use("/", index);
 
 // connection
 const port = process.env.PORT || 9001;
