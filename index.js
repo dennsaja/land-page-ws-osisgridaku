@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/", index);
 app.use("/e", errorsys);
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'views', 'notfound.html'));
+  res.status(404).sendFile(path.join(__dirname, 'views', 'notfound.json'));
 });
 
 // connection
