@@ -11,9 +11,5 @@
       "src": "/(.*)",
       "dest": "/"
     }
-  ],
-  "redirects": [
-    { "source": "/xdmfa", "destination": "https://osisgridaku.framer.ai/home", "permanent": true },
-    { "source": "/(.*)", "destination": "https://osisgridaku.framer.ai/:1", "permanent": true }
   ]
 }
