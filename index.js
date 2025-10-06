@@ -11,7 +11,7 @@ app.use(express.json());
 // Routes
 
 app.use("/", index);
-app.use("/e", errorsys);
+app.use("/err", errorsys);
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'views', 'notfound.json'));
 });
